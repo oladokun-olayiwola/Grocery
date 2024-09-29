@@ -240,16 +240,19 @@ Grocery List
 .grocery-container {
   margin-top: 2rem;
 }
-
 .grocery-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.5rem;
-  transition: var(--transition);
-  padding: 0.25rem 1rem;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  background-color: var(--clr-grey-10);
   border-radius: var(--radius);
-  text-transform: capitalize;
+  flex-wrap: wrap;
+}
+.grocery-item p {
+  flex: 2;
+  margin-right: 10px;
 }
 .grocery-item:hover {
   color: var(--clr-grey-5);
@@ -303,4 +306,120 @@ Grocery List
 }
 .clear-btn:hover {
   color: var(--clr-red-dark);
+}
+
+.grocery-header{
+  display: block;
+}
+.column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.header {
+  padding: 10px;
+  font-weight: bold;
+  color: var(--clr-grey-2);
+  text-align: center;
+}
+.price,
+.amount {
+  width: 60px;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid var(--clr-grey-5);
+  border-radius: var(--radius);
+}
+.total {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  color: var(--clr-primary-5);
+}
+.cost-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid var(--clr-grey-5);
+  margin-bottom: 1rem;
+}
+.header.title {
+  flex: 3;
+}
+
+.header.price,
+.header.amount {
+  flex: 1;
+}
+.grocery-item .title {
+  flex: 3;
+  margin-right: 10px;
+  word-wrap: break-word;
+}
+.grocery-item .input-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-btn,
+.delete-btn {
+  background: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  font-size: 1.25rem;
+  margin-left: 0.5rem;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+
+  .grocery-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .grocery-item .title {
+    flex: none;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  .grocery-item .input-container,
+  .btn-container {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .btn-container {
+    margin-top: 0.5rem;
+  }
+  .price,
+  .amount {
+    width: 80px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grocery-item {
+    padding: 0.5rem;
+    flex-direction: column;
+  }
+  .price,
+  .amount {
+    width: 100%;
+    padding: 10px;
+  }
+  .btn-container {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  .total {
+    font-size: 1.2rem;
+  }
 }
