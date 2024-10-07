@@ -29,7 +29,7 @@ const List = ({ items, removeItem, editItem }) => {
       <div className='cost-header'>
         <p className='header title'>Item</p>
         <p className='header price'>Price</p>
-        <p className='header amount'>Amount</p>
+        <p className='header amount'>Quantity</p>
       </div>
       {items.map((item) => {
         const { id, title } = item;
